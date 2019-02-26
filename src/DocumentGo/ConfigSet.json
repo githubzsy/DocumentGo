@@ -1,0 +1,502 @@
+{
+  "WebRoot": "D:\\MyGit\\Cbxt3\\src\\00_根目录",
+  "DotExe": "D:\\Tools\\graphviz\\bin\\dot.exe",
+  "Modules": [
+    {
+      "Name": "成本管理",
+      "Order": 1,
+      "Children": [
+        {
+          "Name": "目标成本",
+          "Order": 1,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_TargetCostStageVersion",
+            "cb_TargetCostVersion",
+            "cb_TargetProduct",
+            "cb_TargetCostStageVersionProductCost",
+            "cb_TargetCostStageVersionDetail",
+            "cb_Adjust",
+            "cb_AdjustDtl",
+            "cb_TargetCostFtRule",
+            "cb_Target2ProductCost",
+            "cb_TargetProjBuildCostOfFtRule",
+            "cb_TargetMasterProject2Cost",
+            "cb_TargetMasterProjectApproveInfo"
+          ]
+        },
+        {
+          "Name": "合约规划",
+          "Order": 2,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_BudgetWorking",
+            "cb_BudgetWorking2Cost",
+            "cb_BudgetWorking2CoordinateDept",
+            "cb_Budget",
+            "cb_Budget2Cost",
+            "cb_Budget2CoordinateDept",
+            "cb_BudgetBill",
+            "cb_BudgetBillDetail",
+            "p_BudgetTemplateEdition",
+            "p_BudgetTemplate",
+            "cb_DynamicCostFtBudget",
+            "cb_DynamicCostFtRuleBudget",
+            "cb_CostAccountWorking",
+            "cb_CostContractWorking"
+          ]
+        },
+        {
+          "Name": "成本归集主单据关系",
+          "Order": 3,
+          "DrawObjectEnum": 0,
+          "Entities": [
+            "cb_BudgetUseRechargeInfo",
+            "cb_BudgetUseContractWorking",
+            "cb_BudgetUseBcContractWorking",
+            "cb_BudgetUseSubContractWorking",
+            "cb_BudgetUseDesignAlterWorking",
+            "cb_BudgetUseDesignAlterZJSPWorking",
+            "cb_BudgetUseLocaleAlterWorking",
+            "cb_BudgetUseLocaleAlterZJSPWorking",
+            "cb_BudgetUseHTBalanceWorking",
+            "cb_BudgetUseOfHtFKApplyWorking",
+            "cb_BudgetUseOfInvoiceWorking",
+            "cb_BudgetUseOfReceiptPayWorking",
+            "cb_BudgetUseProgressPaymentWorking",
+            "cb_BudgetUseRefundBillWorking",
+            "cb_BudgetUseHTFKApplyForDirectWorking",
+            "cb_InvoiceItemCfWorking",
+            "cb_HtfkPlanAccountCfWorking"
+          ]
+        },
+        {
+          "Name": "成本归集合同",
+          "Order": 4,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_ContractWorking",
+            "cb_BudgetUseContractWorking",
+            "cb_ContractTaxItemWorking"
+          ]
+        },
+        {
+          "Name": "成本归集补充合同",
+          "Order": 5,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_BcContractWorking",
+            "cb_BcContractTaxItemWorking",
+            "cb_BudgetUseBcContractWorking"
+          ]
+        },
+        {
+          "Name": "成本归集分包合同",
+          "Order": 6,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_SubContractWorking",
+            "cb_SubContractTaxItemWorking",
+            "cb_BudgetUseSubContractWorking"
+          ]
+        },
+        {
+          "Name": "成本归集设计变更",
+          "Order": 7,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DesignAlterWorking",
+            "cb_DesignAlterToContractWorking",
+            "cb_DesignAlterTaxItemWorking",
+            "cb_BudgetUseDesignAlterWorking"
+          ]
+        },
+        {
+          "Name": "成本归集设计变更完工确认",
+          "Order": 8,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DesignAlterZJSPWorking",
+            "cb_DesignAlterZJSPTaxItemWorking",
+            "cb_BudgetUseDesignAlterZJSPWorking"
+          ]
+        },
+        {
+          "Name": "成本归集现场签证",
+          "Order": 9,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_LocaleAlterWorking",
+            "cb_LocaleAlterTaxItemWorking",
+            "cb_BudgetUseLocaleAlterWorking"
+          ]
+        },
+        {
+          "Name": "成本归集现场签证完工确认",
+          "Order": 10,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_LocaleAlterZJSPWorking",
+            "cb_LocaleAlterZJSPTaxItemWorking",
+            "cb_BudgetUseLocaleAlterZJSPWorking"
+          ]
+        },
+        {
+          "Name": "成本归集合同结算",
+          "Order": 11,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_HTBalanceWorking",
+            "cb_BalanceTaxItemWorking",
+            "cb_BudgetUseHTBalanceWorking"
+          ]
+        },
+        {
+          "Name": "成本归集无合同付款申请",
+          "Order": 12,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_BudgetUseHTFKApplyForDirectWorking"
+          ]
+        },
+        {
+          "Name": "成本归集合同付款申请",
+          "Order": 13,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_BudgetUseOfHtFKApplyWorking"
+          ]
+        },
+        {
+          "Name": "成本归集发票款项明细",
+          "Order": 14,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_InvoiceItemCfWorking"
+          ]
+        },
+        {
+          "Name": "成本归集付款计划",
+          "Order": 15,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_HtfkPlanAccountCfWorking"
+          ]
+        },
+        {
+          "Name": "成本归集应付进度款",
+          "Order": 16,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_HtfkPlanAccountCfWorking"
+          ]
+        },
+        {
+          "Name": "成本归集退款",
+          "Order": 17,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_BudgetUseRefundBillWorking"
+          ]
+        },
+        {
+          "Name": "成本归集收据实付",
+          "Order": 18,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_BudgetUseOfReceiptPayWorking"
+          ]
+        },
+        {
+          "Name": "产品分摊合约规划",
+          "Order": 19,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostFtBudget",
+            "cb_DynamicCostFtRuleBudget"
+          ]
+        },
+        {
+          "Name": "产品分摊合同",
+          "Order": 20,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostFtContract",
+            "cb_DynamicCostFtRuleContract"
+          ]
+        },
+        {
+          "Name": "产品分摊补充合同",
+          "Order": 21,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostFtBcContract",
+            "cb_DynamicCostFtRuleBcContract"
+          ]
+        },
+        {
+          "Name": "产品分摊分包合同",
+          "Order": 22,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostFtSubContract",
+            "cb_DynamicCostFtRuleSubContract"
+          ]
+        },
+        {
+          "Name": "产品分摊设计变更",
+          "Order": 23,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostFtDesignAlter",
+            "cb_DynamicCostFtRuleDesignAlter"
+          ]
+        },
+        {
+          "Name": "产品分摊设计变更完工确认",
+          "Order": 24,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostFtDesignAlterZjsp",
+            "cb_DynamicCostFtRuleDAZJSP"
+          ]
+        },
+        {
+          "Name": "产品分摊现场签证",
+          "Order": 25,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostFtLocaleAlter",
+            "cb_DynamicCostFtRuleLocaleAlter"
+          ]
+        },
+        {
+          "Name": "产品分摊现场签证完工确认",
+          "Order": 26,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostFtLocaleAlterZJSP",
+            "cb_DynamicCostFtRuleLAZJSP"
+          ]
+        },
+        {
+          "Name": "产品分摊预估变更调整单",
+          "Order": 27,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostFtYgAlterAdjust",
+            "cb_DynamicCostFtRuleYgAlter"
+          ]
+        },
+        {
+          "Name": "产品分摊结算",
+          "Order": 28,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostFtHtBalance",
+            "cb_DynamicCostFtRuleHtBalance"
+          ]
+        },
+        {
+          "Name": "产品分摊无合同付款申请",
+          "Order": 29,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostFtHTFKApply4Direct",
+            "cb_DynamicCostFtRuleHtfk4Direct"
+          ]
+        },
+        {
+          "Name": "产品分摊三费导入",
+          "Order": 30,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostFtFeeImport",
+            "cb_DynamicCostFtRuleFeeImport"
+          ]
+        },
+        {
+          "Name": "产品分摊公建产品",
+          "Order": 31,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DynamicCostProduct",
+            "cb_DynamicCostPubProductFtRule"
+          ]
+        },
+        {
+          "Name": "动态成本",
+          "Order": 32,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_CostAccount",
+            "cb_CostContract"
+          ]
+        },
+        {
+          "Name": "成本回顾",
+          "Order": 33,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_MonthlyReview",
+            "cb_MonthlyReviewChange",
+            "cb_MonthlyReviewChangeDetail",
+            "cb_MonthlyReviewCostDetail",
+            "cb_MonthlyReviewDynamicCost",
+            "cb_MonthlyReviewProductCost",
+            "cb_MonthlyReviewProductPrice"
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "合同管理",
+      "Order": 2,
+      "Children": [
+        {
+          "Name": "合同管理主单据关系",
+          "Order": 1,
+          "DrawObjectEnum": 0,
+          "Entities": [
+            "cb_BcContract",
+            "cb_Contract",
+            "cb_ContractItem",
+            "cb_DesignAlter",
+            "cb_DesignAlterToContract",
+            "cb_DesignAlterZJSP",
+            "cb_HTBalance",
+            "cb_LocaleAlter",
+            "cb_LocaleAlterZJSP",
+            "cb_SubContract",
+            "cb_YgAlterAdjust"
+          ]
+        },
+        {
+          "Name": "事项呈批",
+          "Order": 2,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_ContractItem",
+            "cb_ContractItemAdjust"
+          ]
+        },
+        {
+          "Name": "合同",
+          "Order": 3,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_Contract",
+            "cb_ContractProj",
+            "cb_ContractBfProvider",
+            "cb_HTFKCondition",
+            "cb_ContractTaxItem",
+            "cb_BudgetUseContract",
+            "cb_DynamicCostFtContract",
+            "cb_DynamicCostFtRuleContract"
+          ]
+        },
+        {
+          "Name": "补充合同",
+          "Order": 4,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_BcContract",
+            "cb_BcContractProj",
+            "cb_BcContractTaxItem",
+            "cb_BudgetUseBcContract",
+            "cb_DynamicCostFtBcContract",
+            "cb_DynamicCostFtRuleBcContract",
+            "cb_BcContractToDesignAlter",
+            "cb_BcContractToLocaleAlter"
+          ]
+        },
+        {
+          "Name": "分包合同",
+          "Order": 5,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_SubContract",
+            "cb_SubContractTaxItem",
+            "cb_SubContractProj",
+            "cb_BudgetUseSubContract",
+            "cb_DynamicCostFtSubContract",
+            "cb_DynamicCostFtRuleSubContract"
+          ]
+        },
+        {
+          "Name": "预估变更调整单",
+          "Order": 6,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_YgAlterAdjust",
+            "cb_YgAlterAdjustDtl"
+          ]
+        },
+        {
+          "Name": "设计变更",
+          "Order": 7,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DesignAlter",
+            "cb_DesignAlterToContract",
+            "cb_DesignAlterTaxItem",
+            "cb_BudgetUseDesignAlter",
+            "cb_DynamicCostFtDesignAlter",
+            "cb_DynamicCostFtRuleDesignAlter",
+            "cb_DesignAlterProjectCommand",
+            "cb_ProjectCommandCSProvider"
+          ]
+        },
+        {
+          "Name": "设计变更完工确认单",
+          "Order": 8,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_DesignAlterZJSP",
+            "cb_DesignAlterZJSPTaxItem",
+            "cb_BudgetUseDesignAlterZJSP",
+            "cb_DynamicCostFtDesignAlterZjsp",
+            "cb_DynamicCostFtRuleDAZJSP"
+          ]
+        },
+        {
+          "Name": "现场签证",
+          "Order": 9,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_LocaleAlter",
+            "cb_LocaleAlterTaxItem",
+            "cb_BudgetUseLocaleAlter",
+            "cb_DynamicCostFtLocaleAlter",
+            "cb_DynamicCostFtRuleLocaleAlter",
+            "cb_LocaleAlterProjectCommand"
+          ]
+        },
+        {
+          "Name": "现场签证完工确认单",
+          "Order": 10,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_LocaleAlterZJSP",
+            "cb_LocaleAlterZJSPTaxItem",
+            "cb_BudgetUseLocaleAlterZJSP",
+            "cb_DynamicCostFtLocaleAlterZJSP",
+            "cb_DynamicCostFtRuleLAZJSP"
+          ]
+        },
+        {
+          "Name": "合同结算",
+          "Order": 11,
+          "DrawObjectEnum": 2,
+          "Entities": [
+            "cb_HTBalance",
+            "cb_BalanceTaxItem",
+            "cb_BudgetUseHTBalance",
+            "cb_DynamicCostFtHtBalance",
+            "cb_DynamicCostFtRuleHtBalance"
+          ]
+        }
+      ]
+    }
+  ]
+}
