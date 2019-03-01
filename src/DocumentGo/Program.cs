@@ -3,6 +3,7 @@ using DocumentGo.Models;
 using McMaster.Extensions.CommandLineUtils;
 using System;
 using System.IO;
+using System.Threading;
 
 namespace DocumentGo
 {
@@ -11,14 +12,18 @@ namespace DocumentGo
         public static void Main(string[] args)
         {
             Console.Title = "DocumentGo --By Zhaobb";
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
 
             // 读取配置文件
             Config config = Config.FromConfigFile();
-
+            int choice = 0;
             while (true)
             {
-                int choice = Prompt.GetInt("请选择操作:\n\n1. 读取元数据\n2. 导出Excel(可调整输出的Excel)\n3. 导出Dot(可调整输出的Dot)\n4. 生成Png\n5. 生成Rtf\n\n6. 退出\n",
-                promptColor: ConsoleColor.Green,
+                ChoiceTips(choice);
+
+                choice = Prompt.GetInt("你选择的操作是：",
+                promptColor: ConsoleColor.White,
                 promptBgColor: ConsoleColor.Black);
 
                 switch (choice)
@@ -31,6 +36,8 @@ namespace DocumentGo
                     case 6: Environment.Exit(0); break;
                     default: break;
                 }
+                Thread.Sleep(2000);
+                Console.Clear();
             }
         }
 
@@ -39,13 +46,11 @@ namespace DocumentGo
             SchemaCollection SchemaCollection = InitSchemaCollection(config);
             BaseExport export = new RtfExport(config, SchemaCollection);
             export.Export();
-            Console.WriteLine("***OK 生成Rtf");
         }
 
         private static void Choice4(Config config)
         {
             DotUtil.Exec(config.DotExe, config.Output);
-            Console.WriteLine("***OK 生成Png");
         }
 
         private static void Choice3(Config config)
@@ -54,8 +59,6 @@ namespace DocumentGo
             // 导出Dot文件
             BaseExport export = new DotExport(config, SchemaCollection);
             export.Export();
-
-            Console.WriteLine("***OK 导出Dot(可调整输出的Dot)");
         }
 
         private static void Choice2(Config config)
@@ -64,28 +67,27 @@ namespace DocumentGo
             // 导出Xls
             BaseExport export = new ExcelExport(config, SchemaCollection);
             export.Export();
-            Console.WriteLine("***OK 导出Excel(可调整输出的Excel)");
         }
 
         private static void Choice1(Config config)
         {
             InitSchemaCollection(config);
-            Console.WriteLine("***OK 读取元数据");
         }
 
         private static SchemaCollection InitSchemaCollection(Config config)
         {
             SchemaCollection SchemaCollection;
 
-            var excelName= Path.Combine(config.Output, "Report.xls");
-            var dataFile = Path.Combine(config.Output, "Metadata.dat");
+            string excelName = Path.Combine(config.Output, "Report.xls");
+            string dataFile = Path.Combine(config.Output, "Metadata.dat");
 
             if (File.Exists(excelName))
             {
                 BaseImport import = new ExcelImport(config);
 
                 SchemaCollection = (SchemaCollection)import.Import();
-            }else if (File.Exists(dataFile))
+            }
+            else if (File.Exists(dataFile))
             {
                 byte[] bytes = dataFile.ToBytes();
 
@@ -103,6 +105,19 @@ namespace DocumentGo
             }
 
             return SchemaCollection;
+        }
+
+        private static void ChoiceTips(int choice)
+        {
+            Console.WriteLine("请选择操作:");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"\t{(choice == 1 ? "*" : " ")}1.读取元数据");
+            Console.WriteLine($"\t{(choice == 2 ? "*" : " ")}2.导出Excel(可调整输出的Excel)");
+            Console.WriteLine($"\t{(choice == 3 ? "*" : " ")}3.生成Dot(可调整输出的Dot)");
+            Console.WriteLine($"\t{(choice == 4 ? "*" : " ")}4.绘制ER图");
+            Console.WriteLine($"\t{(choice == 5 ? "*" : " ")}5.生成Rtf");
+            Console.WriteLine($"\t 6.退出");
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
