@@ -98,7 +98,7 @@ namespace DocumentGo
                                 r => r.AttributeType),
                             new CellFormatter<MetadataAttribute>(sheetParameterContainer1["ColumnDbType"], r => r.DbType),
                             new CellFormatter<MetadataAttribute>(sheetParameterContainer1["IsPrimaryAttribute"],
-                                r => r.IsPrimaryAttribute == "true" ? "是" : ""),
+                                r => r.IsPrimary == "true" ? "是" : ""),
                             new CellFormatter<MetadataAttribute>(sheetParameterContainer1["Remark"], r => r.Remark),
                             new CellFormatter<MetadataAttribute>(sheetParameterContainer1["IsNullable"],
                                 r => r.IsNullable == "true" ? "是" : "")
@@ -173,9 +173,9 @@ namespace DocumentGo
 
                     
                     foreach (var attr in entity.Attributes.Where(m => m.DbType == "uniqueidentifier")
-                        .OrderByDescending(m => m.IsPrimaryAttribute == "true"))
+                        .OrderByDescending(m => m.IsPrimary == "true"))
                     {
-                        if (attr.IsPrimaryAttribute == "true")
+                        if (attr.IsPrimary == "true")
                         {
                             content += "  			<TR><TD BORDER=\"1\" PORT=\"" +
                                        attr.Name + "\">PK</TD><TD BORDER=\"1\" ALIGN=\"LEFT\" WIDTH=\"250\"> " + attr.Name + " </TD></TR>" + Environment.NewLine;

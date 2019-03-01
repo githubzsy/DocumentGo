@@ -185,9 +185,9 @@ namespace DocumentGo
         }
         
 
-        private Table DrawTable(MetadataEntity entity)
+        private iTextSharp.text.Table DrawTable(MetadataEntity entity)
         {
-            var t = new Table(5, entity.Attributes.Count)
+            var t = new iTextSharp.text.Table(5, entity.Attributes.Count)
             {
                 AutoFillEmptyCells = true,
                 CellsFitPage = true,
@@ -223,7 +223,7 @@ namespace DocumentGo
             return t;
         }
 
-        private void AddRow(Table table, string title1, string title2)
+        private void AddRow(iTextSharp.text.Table table, string title1, string title2)
         {
             var phrase1 = new Phrase(title1, _tableCell);
             var phrase2 = new Phrase(title2, _tableCell);

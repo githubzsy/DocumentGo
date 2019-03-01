@@ -9,6 +9,8 @@ namespace DocumentGo.Models
     {
         public string WebRoot { get; set; }
 
+        public string ApplicationCode { get; set; }
+
         public string DotExe { get; set; }
 
         public List<Module> Modules { get; set; }

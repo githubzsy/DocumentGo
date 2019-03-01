@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs
+/src/.vs/DocumentGo/v15
+/src/DocumentGo/obj
+/src/DocumentGo/bin/Debug
+/src/packages
+/src/DocumentGo.sln.DotSettings.user

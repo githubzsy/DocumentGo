@@ -1,14 +1,13 @@
 ﻿namespace DocumentGo.Models
 {
-    public class MetadataAttribute
+    public class Column
     {
-        public string AttributeId { get; set; }
         public string Name { get; set; }
         public string DisplayName { get; set; }
         public string AttributeType { get; set; }
         public string DbType { get; set; }
-        public string IsPrimary { get; set; }
-        public string IsNullable { get; set; }
+        public bool IsPrimary { get; set; }
+        public bool IsNullable { get; set; }
 
         public string Length { get; set; }
         public string Remark { get; set; }
