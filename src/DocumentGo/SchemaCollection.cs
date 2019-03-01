@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DocumentGo.Models;
 
 namespace DocumentGo
 {
+    [Serializable]
     public class SchemaCollection
     {
         /// <summary>

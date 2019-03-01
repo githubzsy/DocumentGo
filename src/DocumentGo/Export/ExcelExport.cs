@@ -9,9 +9,9 @@ namespace DocumentGo
     /// <summary>
     /// 导出XLS
     /// </summary>
-    public class ExportXls : ExportBase
+    public class ExcelExport : BaseExport
     {
-        public ExportXls(Config config, SchemaCollection schemaCollection) : base(config, schemaCollection)
+        public ExcelExport(Config config, SchemaCollection schemaCollection) : base(config, schemaCollection)
         {
         }
 
@@ -23,7 +23,7 @@ namespace DocumentGo
             SheetParameterContainer sheetParameterContainer2 = workbookParameterContainer["主外键关系"];
 
             ExportHelper.ExportToLocal(@"Template\Template.xls",
-                Path.Combine(Output, "Report.xls"),
+                Path.Combine(Config.Output, "Report.xls"),
                 new SheetFormatter("数据库表格",
                     new RepeaterFormatter<Models.Table>(sheetParameterContainer1["rptTable_Start"],sheetParameterContainer1["rptTable_End"], SchemaCollection.TableList,
                         new CellFormatter<Models.Table>(sheetParameterContainer1["Name"], t => t.Name),
@@ -51,8 +51,6 @@ namespace DocumentGo
                     )
                 )
             );
-
-            Console.WriteLine("Xls文档已生成");
         }
     }
 }

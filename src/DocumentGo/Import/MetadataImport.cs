@@ -1,4 +1,5 @@
-﻿using DocumentGo.Models;
+﻿using DocumentGo.Import;
+using DocumentGo.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,18 +8,8 @@ using System.Xml.Linq;
 
 namespace DocumentGo
 {
-    public class MetadataReader
+    public class MetadataImport: BaseImport
     {
-        /// <summary>
-        /// 站点根目录
-        /// </summary>
-        private readonly string _rootDir;
-
-        /// <summary>
-        /// 子系统编码
-        /// </summary>
-        private readonly string _appCode;
-
         /// <summary>
         /// 查找文件
         /// </summary>
@@ -48,17 +39,9 @@ namespace DocumentGo
             "VersionNumber"
         };
 
-        public MetadataReader(string rootDir, string appCode)
-        {
-            _rootDir = rootDir;
-            _appCode = appCode;
-
-            SchemaCollection = GetMetadataCollection();
-
-            Console.WriteLine("元数据读取完成");
+        public MetadataImport(Config config):base (config)
+        {            
         }
-
-        public SchemaCollection SchemaCollection { get; }
 
         /// <summary>
         /// 加载元数据
@@ -68,9 +51,9 @@ namespace DocumentGo
         {
             SchemaCollection metadataCollection = new SchemaCollection();
 
-            List<MetadataEntity> metadataEntityList = LoadEntities(Path.Combine(_rootDir, ENTITY_FOLDER));
+            List<MetadataEntity> metadataEntityList = LoadEntities(Path.Combine(Config.WebRoot, ENTITY_FOLDER));
 
-            List<MetadataRelationShip> metadataRelationShipList = LoadRelationShips(Path.Combine(_rootDir, RELATIONSHIP_FOLDER));
+            List<MetadataRelationShip> metadataRelationShipList = LoadRelationShips(Path.Combine(Config.WebRoot, RELATIONSHIP_FOLDER));
 
             foreach (var entity in metadataEntityList)
             {
@@ -118,6 +101,11 @@ namespace DocumentGo
             return metadataCollection;
         }
 
+        /// <summary>
+        /// 加载元数据关系
+        /// </summary>
+        /// <param name="relationShipPath"></param>
+        /// <returns></returns>
         private List<MetadataRelationShip> LoadRelationShips(string relationShipPath)
         {
             List<MetadataRelationShip> result = new List<MetadataRelationShip>();
@@ -145,7 +133,7 @@ namespace DocumentGo
                 return null;
             }
 
-            if (rootEle.Attribute("application").Value != _appCode)
+            if (rootEle.Attribute("application").Value != Config.ApplicationCode)
             {
                 return null;
             }
@@ -155,8 +143,8 @@ namespace DocumentGo
                 Type = rootEle.Element("Type").Value,
                 PrimaryEntityId = rootEle.Element("PrimaryEntityId").Value,
                 PrimaryAttributeId = rootEle.Element("PrimaryAttributeId").Value,
-                RelatedEntityId = rootEle.Element("PrimaryAttributeId").Value,
-                RelatedAttributeId = rootEle.Element("PrimaryAttributeId").Value
+                RelatedEntityId = rootEle.Element("RelatedEntityId").Value,
+                RelatedAttributeId = rootEle.Element("RelatedAttributeId").Value
             };
 
             return ship;
@@ -189,7 +177,7 @@ namespace DocumentGo
                 return null;
             }
 
-            if (rootEle.Attribute("Application").Value != _appCode)
+            if (rootEle.Attribute("Application").Value != Config.ApplicationCode)
             {
                 return null;
             }
@@ -283,11 +271,11 @@ namespace DocumentGo
             {
                 AttributeType = attr.AttributeType,
                 DbType = attr.DbType,
-                DecimalPrecision = attr.DecimalPrecision,
+                //DecimalPrecision = attr.DecimalPrecision,
                 DisplayName = attr.DisplayName,
-                IsNullable = attr.IsNullable == "是",
-                IsPrimary = attr.IsPrimary == "是",
-                Length = attr.Length,
+                IsNullable = attr.IsNullable == "true",
+                IsPrimary = attr.IsPrimary == "true",
+                //Length = attr.Length,
                 Name = attr.Name,
                 Remark = attr.Remark
             };
@@ -330,6 +318,13 @@ namespace DocumentGo
             };
 
             return relationShip;
+        }
+
+        public override object Import()
+        {
+            var result= GetMetadataCollection();
+
+            return result;
         }
     }
 }

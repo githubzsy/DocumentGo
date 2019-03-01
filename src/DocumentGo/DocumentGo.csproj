@@ -65,8 +65,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -76,13 +76,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DotUtil.cs" />
-    <Compile Include="ExportBase.cs" />
-    <Compile Include="ExportDot.cs" />
-    <Compile Include="ExportRtf.cs" />
-    <Compile Include="ExportXls.cs" />
+    <Compile Include="Export\BaseExport.cs" />
+    <Compile Include="Export\DotExport.cs" />
+    <Compile Include="Export\ExcelExport.cs" />
+    <Compile Include="Export\RtfExport.cs" />
+    <Compile Include="Import\BaseImport.cs" />
+    <Compile Include="Import\ExcelImport.cs" />
+    <Compile Include="Import\MetadataImport.cs" />
+    <Compile Include="Utils\ConvertUtil.cs" />
+    <Compile Include="Utils\DotUtil.cs" />
     <Compile Include="SchemaCollection.cs" />
-    <Compile Include="MetadataReader.cs" />
     <Compile Include="Models\Child.cs" />
     <Compile Include="Models\Column.cs" />
     <Compile Include="Models\Config.cs" />
@@ -106,6 +109,7 @@
     <Content Include="2.调整ER图之后生成Report.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <Content Include="Template\Template.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

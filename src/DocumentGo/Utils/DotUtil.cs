@@ -15,8 +15,6 @@ namespace DocumentGo
             {
                 ConvertDot2Png(dotExe, dot);
             }
-
-            Console.WriteLine("ER图绘制完成");
         }
 
         private static void ConvertDot2Png(string dotExe, string dotFile)

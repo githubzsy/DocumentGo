@@ -1,5 +1,8 @@
-﻿namespace DocumentGo.Models
+﻿using System;
+
+namespace DocumentGo.Models
 {
+    [Serializable]
     public class RelationShip
     {
         public bool IsMetadata { get; set; }

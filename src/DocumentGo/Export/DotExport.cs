@@ -10,9 +10,9 @@ namespace DocumentGo
     /// <summary>
     /// 导出Dot文件
     /// </summary>
-    public class ExportDot : ExportBase
+    public class DotExport : BaseExport
     {
-        public ExportDot(Config config, SchemaCollection schemaCollection) : base(config, schemaCollection)
+        public DotExport(Config config, SchemaCollection schemaCollection) : base(config, schemaCollection)
         {
         }
 
@@ -22,7 +22,6 @@ namespace DocumentGo
             {
                 ProcessModule(module);
             }
-            Console.WriteLine("Dot已生成");
         }
 
         private void ProcessModule(Module module)
@@ -84,7 +83,7 @@ namespace DocumentGo
 
                 content += "}";
 
-                string fileName = Path.Combine(Output, module.Name + "_" + child.Name) + ".dot";
+                string fileName = Path.Combine(Config.Output, module.Name + "_" + child.Name) + ".dot";
 
                 File.WriteAllText(fileName, content, Encoding.UTF8);
             }

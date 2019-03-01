@@ -12,7 +12,7 @@ namespace DocumentGo
     /// <summary>
     /// 导出Rtf文档
     /// </summary>
-    public class ExportRtf : ExportBase
+    public class RtfExport : BaseExport
     {
         #region 字体样式
 
@@ -28,7 +28,7 @@ namespace DocumentGo
 
         #endregion
 
-        public ExportRtf(Config config, SchemaCollection schemaCollection) : base(config, schemaCollection)
+        public RtfExport(Config config, SchemaCollection schemaCollection) : base(config, schemaCollection)
         {
             InitStyle();
         }
@@ -63,8 +63,11 @@ namespace DocumentGo
                     // 是否需要绘制关系图
                     if (child.DrawObjectEnum == DrawObjectEnum.Image || child.DrawObjectEnum == DrawObjectEnum.All)
                     {
-                        section.Add(new Phrase(new Chunk(imageDict[module.Name + "_" + child.Name], 0, 0)));
-                        section.Add(Chunk.NEWLINE);
+                        if (imageDict.ContainsKey(module.Name + "_" + child.Name))
+                        {
+                            section.Add(new Phrase(new Chunk(imageDict[module.Name + "_" + child.Name], 0, 0)));
+                            section.Add(Chunk.NEWLINE);
+                        }                        
                     }
 
                     // 是否需要绘制表格
@@ -87,8 +90,6 @@ namespace DocumentGo
             }
 
             doc.Close();
-
-            Console.WriteLine("Rtf文档已生成");
         }
 
         #region Private
@@ -146,7 +147,7 @@ namespace DocumentGo
             // 创建文档
             Document doc = new Document(PageSize.A4, 60, 60, 60, 60);
             // 写文档实例
-            RtfWriter2.GetInstance(doc, new FileStream(Path.Combine(Output, "Report.rtf"), FileMode.Create, FileAccess.Write)); ;
+            RtfWriter2.GetInstance(doc, new FileStream(Path.Combine(Config.Output, "Report.rtf"), FileMode.Create, FileAccess.Write)); ;
             // 打开文档
             doc.Open();
 
@@ -167,7 +168,7 @@ namespace DocumentGo
 
             foreach (string name in names)
             {
-                string imgName = Path.Combine(Output, name + ".png");
+                string imgName = Path.Combine(Config.Output, name + ".png");
 
                 if (File.Exists(imgName))
                 {

@@ -1,6 +1,7 @@
 {
-  "WebRoot": "D:\\MyGit\\Cbxt3\\src\\00_根目录",
-  "DotExe": "D:\\Tools\\graphviz\\bin\\dot.exe",
+  "WebRoot": "D:\\Work\\Projects\\cbxt-feature-330批次集成01\\src\\00_根目录",
+  "Output": "E:\\Output",
+  "DotExe": "D:\\Tools\\Graphviz\\bin\\dot.exe",
   "ApplicationCode": "0201",
   "Modules": [
     {

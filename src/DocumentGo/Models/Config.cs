@@ -11,6 +11,8 @@ namespace DocumentGo.Models
 
         public string ApplicationCode { get; set; }
 
+        public string Output { get; set; }
+
         public string DotExe { get; set; }
 
         public List<Module> Modules { get; set; }
@@ -26,7 +28,19 @@ namespace DocumentGo.Models
                 Console.ReadKey();
                 Environment.Exit(0);
             }
-            return JsonConvert.DeserializeObject<Config>(File.ReadAllText("ConfigSet.json", System.Text.Encoding.UTF8));
+            Config config= JsonConvert.DeserializeObject<Config>(File.ReadAllText("ConfigSet.json", System.Text.Encoding.UTF8));
+
+            if (string.IsNullOrEmpty(config.Output) || string.IsNullOrWhiteSpace(config.Output))
+            {
+                config.Output= Path.Combine(Directory.GetCurrentDirectory() + "\\Output");
+            }
+
+            if(!Directory.Exists(config.Output))
+            {
+                Directory.CreateDirectory(config.Output);
+            }
+
+            return config;
         }
     }
 }
