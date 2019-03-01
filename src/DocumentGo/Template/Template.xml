@@ -9,19 +9,14 @@
         <ColumnIndex>0</ColumnIndex>
       </Parameter>
       <Parameter>
-        <Name>Index</Name>
-        <RowIndex>1</RowIndex>
-        <ColumnIndex>0</ColumnIndex>
-      </Parameter>
-      <Parameter>
         <Name>Name</Name>
         <RowIndex>1</RowIndex>
-        <ColumnIndex>2</ColumnIndex>
+        <ColumnIndex>1</ColumnIndex>
       </Parameter>
       <Parameter>
         <Name>DisplayName</Name>
         <RowIndex>1</RowIndex>
-        <ColumnIndex>5</ColumnIndex>
+        <ColumnIndex>4</ColumnIndex>
       </Parameter>
       <Parameter>
         <Name>rptColumn_Start</Name>
@@ -31,37 +26,37 @@
       <Parameter>
         <Name>ColumnName</Name>
         <RowIndex>4</RowIndex>
-        <ColumnIndex>1</ColumnIndex>
+        <ColumnIndex>0</ColumnIndex>
       </Parameter>
       <Parameter>
         <Name>ColumnDisplayName</Name>
         <RowIndex>4</RowIndex>
-        <ColumnIndex>2</ColumnIndex>
+        <ColumnIndex>1</ColumnIndex>
       </Parameter>
       <Parameter>
         <Name>ColumnAttributeType</Name>
         <RowIndex>4</RowIndex>
-        <ColumnIndex>3</ColumnIndex>
+        <ColumnIndex>2</ColumnIndex>
       </Parameter>
       <Parameter>
         <Name>ColumnDbType</Name>
         <RowIndex>4</RowIndex>
-        <ColumnIndex>4</ColumnIndex>
+        <ColumnIndex>3</ColumnIndex>
       </Parameter>
       <Parameter>
-        <Name>IsPrimaryAttribute</Name>
+        <Name>IsPrimary</Name>
         <RowIndex>4</RowIndex>
-        <ColumnIndex>5</ColumnIndex>
+        <ColumnIndex>4</ColumnIndex>
       </Parameter>
       <Parameter>
         <Name>IsNullable</Name>
         <RowIndex>4</RowIndex>
-        <ColumnIndex>6</ColumnIndex>
+        <ColumnIndex>5</ColumnIndex>
       </Parameter>
       <Parameter>
         <Name>Remark</Name>
         <RowIndex>4</RowIndex>
-        <ColumnIndex>7</ColumnIndex>
+        <ColumnIndex>6</ColumnIndex>
       </Parameter>
       <Parameter>
         <Name>rptColumn_End</Name>
@@ -69,14 +64,9 @@
         <ColumnIndex>0</ColumnIndex>
       </Parameter>
       <Parameter>
-        <Name>EntityId</Name>
+        <Name>EmptyLine</Name>
         <RowIndex>6</RowIndex>
-        <ColumnIndex>2</ColumnIndex>
-      </Parameter>
-      <Parameter>
-        <Name>Application</Name>
-        <RowIndex>6</RowIndex>
-        <ColumnIndex>5</ColumnIndex>
+        <ColumnIndex>0</ColumnIndex>
       </Parameter>
       <Parameter>
         <Name>rptTable_End</Name>
@@ -94,54 +84,29 @@
         <ColumnIndex>0</ColumnIndex>
       </Parameter>
       <Parameter>
-        <Name>Index</Name>
+        <Name>PrimaryTableName</Name>
         <RowIndex>2</RowIndex>
         <ColumnIndex>0</ColumnIndex>
       </Parameter>
       <Parameter>
-        <Name>PrimaryEntityName</Name>
+        <Name>PrimaryColumnName</Name>
         <RowIndex>2</RowIndex>
         <ColumnIndex>1</ColumnIndex>
       </Parameter>
       <Parameter>
-        <Name>PrimaryEntityDisplayName</Name>
+        <Name>RelatedTableName</Name>
         <RowIndex>2</RowIndex>
         <ColumnIndex>2</ColumnIndex>
       </Parameter>
       <Parameter>
-        <Name>PrimaryAttributeName</Name>
+        <Name>RelatedColumnName</Name>
         <RowIndex>2</RowIndex>
         <ColumnIndex>3</ColumnIndex>
       </Parameter>
       <Parameter>
-        <Name>PrimaryAttributeDisplayName</Name>
+        <Name>IsMetadata</Name>
         <RowIndex>2</RowIndex>
         <ColumnIndex>4</ColumnIndex>
-      </Parameter>
-      <Parameter>
-        <Name>RelatedEntityName</Name>
-        <RowIndex>2</RowIndex>
-        <ColumnIndex>5</ColumnIndex>
-      </Parameter>
-      <Parameter>
-        <Name>RelatedEntityDisplayName</Name>
-        <RowIndex>2</RowIndex>
-        <ColumnIndex>6</ColumnIndex>
-      </Parameter>
-      <Parameter>
-        <Name>RelatedAttributeName</Name>
-        <RowIndex>2</RowIndex>
-        <ColumnIndex>7</ColumnIndex>
-      </Parameter>
-      <Parameter>
-        <Name>RelatedAttributeDisplayName</Name>
-        <RowIndex>2</RowIndex>
-        <ColumnIndex>8</ColumnIndex>
-      </Parameter>
-      <Parameter>
-        <Name>Type</Name>
-        <RowIndex>2</RowIndex>
-        <ColumnIndex>9</ColumnIndex>
       </Parameter>
       <Parameter>
         <Name>rptRow_End</Name>

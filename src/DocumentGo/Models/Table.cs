@@ -8,6 +8,6 @@ namespace DocumentGo.Models
 
         public string DisplayName { get; set; }
 
-        public List<Column> Columns { get; set; }
+        public List<Column> Columns { get; set; } = new List<Column>();
     }
 }

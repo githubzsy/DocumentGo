@@ -4,8 +4,6 @@ namespace DocumentGo.Models
 {
     public class MetadataEntity
     {
-        public int Index { get; set; }
-
         public string EntityId { get; set; }
 
         public string Name { get; set; }

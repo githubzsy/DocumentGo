@@ -54,6 +54,8 @@ namespace DocumentGo
             _appCode = appCode;
 
             SchemaCollection = GetMetadataCollection();
+
+            Console.WriteLine("元数据读取完成");
         }
 
         public SchemaCollection SchemaCollection { get; }
@@ -143,18 +145,18 @@ namespace DocumentGo
                 return null;
             }
 
-            if (rootEle.Attribute("Application").Value != _appCode)
+            if (rootEle.Attribute("application").Value != _appCode)
             {
                 return null;
             }
 
             MetadataRelationShip ship = new MetadataRelationShip()
             {
-                Type = rootEle.Attribute("Type").Value,
-                PrimaryEntityId = rootEle.Attribute("PrimaryEntityId").Value,
-                PrimaryAttributeId = rootEle.Attribute("PrimaryAttributeId").Value,
-                RelatedEntityId = rootEle.Attribute("PrimaryAttributeId").Value,
-                RelatedAttributeId = rootEle.Attribute("PrimaryAttributeId").Value
+                Type = rootEle.Element("Type").Value,
+                PrimaryEntityId = rootEle.Element("PrimaryEntityId").Value,
+                PrimaryAttributeId = rootEle.Element("PrimaryAttributeId").Value,
+                RelatedEntityId = rootEle.Element("PrimaryAttributeId").Value,
+                RelatedAttributeId = rootEle.Element("PrimaryAttributeId").Value
             };
 
             return ship;
