@@ -79,6 +79,7 @@ namespace DocumentGo
 
                 var key = entity.Attributes.First(e => e.IsPrimary == "true");
 
+                // 根据主键名称寻找对应关系
                 var rEntities = metadataEntityList
                     .Where(m => m.Attributes.Any(a => a.Name.Equals(key.Name, StringComparison.OrdinalIgnoreCase)) && m.EntityId != entity.EntityId).ToList();
 
@@ -124,6 +125,11 @@ namespace DocumentGo
             return result;
         }
 
+        /// <summary>
+        /// 读取实体关系
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
         private MetadataRelationShip ReadMetadataRelationShipFile(string file)
         {
             XDocument doc = XDocument.Load(file);
